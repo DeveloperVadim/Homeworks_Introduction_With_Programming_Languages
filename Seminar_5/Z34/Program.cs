@@ -29,7 +29,7 @@ void PrintArr(int[] array)
     }
 }
 
-Console.WriteLine("Задайте размерность массива:");
+Console.WriteLine("Задайте длину массива:");
 int len = Convert.ToInt32(Console.ReadLine());
 int[] array = RandNum(len);
 PrintArr(array);
