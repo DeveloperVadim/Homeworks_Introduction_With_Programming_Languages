@@ -13,15 +13,14 @@ int[] RandNum(int len)
 }
 
 
-void FindSumOdd(int[] array)
+void FindSumUnev(int[] array,int len)
 {
-    int count = 0;
-    foreach (int el in array)
-    {
-        if (el % 2>0) count++;
-    }
+    int sum = 0;
+     for (int i = 0; i < len; i++)
+        if (i%2>0) sum+=array[i];
+    
     Console.WriteLine();
-    Console.WriteLine($"Сумма не четных чисел в массиве = {count}");
+    Console.WriteLine($"Сумма чисел на не четных позициях в массиве = {sum}");
 }
 
 void PrintArr(int[] array)
@@ -36,4 +35,4 @@ Console.WriteLine("Задайте длину массива:");
 int len = Convert.ToInt32(Console.ReadLine());
 int[] array = RandNum(len);
 PrintArr(array);
-FindSumOdd(array);
+FindSumUnev(array,len);
