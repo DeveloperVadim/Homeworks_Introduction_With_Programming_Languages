@@ -4,29 +4,29 @@
 // на экран с пояснениями. Найти медианное значение первоначалального массива , 
 // возможно придется кое-что для этого дополнительно выполнить.
 
-void PrintArr2(int[] array)
+void PrintArr2(int[] array) // вывод массива
 {
 
-    Console.Write("Массив2: ");
+    Console.Write("Массив из найденных элементов: ");
     foreach (int el in array)
     {
         Console.Write($"{el} ");
     }
     Console.WriteLine();
-    Console.WriteLine($"Мин знач.:{array[0]} Мин инд.:{array[1]} Макс знач.:{array[2]} Макс инд.:{array[3]} Ср. арефм.:{array[4]}");
+    Console.WriteLine($"ПОЯСНЕНИЕ- Мин знач.(0):{array[0]} Мин инд.(1):{array[1]} Макс знач.(2):{array[2]} Макс инд.(3):{array[3]} Ср. арефм.(4):{array[4]}");
 }
 
-void PrintArr(int[] array)
+void PrintArr(int[] array) // вывод массива
 {
 
-    Console.Write("Массив: ");
+    Console.Write("Исходный массив: ");
     foreach (int el in array)
     {
         Console.Write($"{el} ");
     }
 }
 
-int[] RandNum(int len)
+int[] RandArr(int len) // создание рандомного массива
 {
     int[] array = new int[len];
     Random rand = new Random();
@@ -35,7 +35,7 @@ int[] RandNum(int len)
     return array;
 }
 
-int[] FindArr2(int[] array, int len)
+int[] RezArr(int[] array, int len) // нахождение значений
 {
     int min = array[0];
     int minI = 0;
@@ -67,7 +67,7 @@ int[] FindArr2(int[] array, int len)
     return array2;
 }
 
-void SelectionSort(int[] array, int len)
+void SelectionSort(int[] array, int len) // сортировка массива от мин к макс
 {
     for (int i = 0; i < len - 1; i++)
     {
@@ -85,7 +85,7 @@ void SelectionSort(int[] array, int len)
     }
 }
 
-int MedianNum(int[] array, int len)
+int MedianNum(int[] array, int len) // медианное значение
 {
     int median = 0;
     for (int i = 0; i < len - 1; i++)
@@ -99,14 +99,12 @@ int MedianNum(int[] array, int len)
 
 Console.WriteLine("Задайте длину массива:");
 int len = Convert.ToInt32(Console.ReadLine());
-int[] array = RandNum(len);
-int[] array2 = FindArr2(array, len);
+int[] array = RandArr(len);
+int[] array2 = RezArr(array, len);
 PrintArr(array);
 Console.WriteLine();
-//FindArr2(array, len);
 SelectionSort(array, len);
+PrintArr2(array2);
 PrintArr(array);
 Console.WriteLine();
 Console.WriteLine($"Медианное значение: {MedianNum(array, len)}");
-PrintArr2(array2);
-Console.WriteLine();
