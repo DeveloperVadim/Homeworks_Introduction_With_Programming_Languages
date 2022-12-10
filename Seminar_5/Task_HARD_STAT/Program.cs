@@ -41,7 +41,7 @@ int[] RandArr(int len) // создание рандомного массива
     int[] array = new int[len];
     Random rand = new Random();
     for (int i = 0; i < len; i++)
-        array[i] = rand.Next() % (len * 10);
+        array[i] = rand.Next(0,100); // % (len * 10);
     return array;
 }
 
