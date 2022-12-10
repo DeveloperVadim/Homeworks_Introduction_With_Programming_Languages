@@ -4,6 +4,16 @@
 // на экран с пояснениями. Найти медианное значение первоначалального массива , 
 // возможно придется кое-что для этого дополнительно выполнить.
 
+void PrintArr3(int[] array) // вывод массива
+{
+
+    Console.Write("Отсортированный массив от Min к Max: ");
+    foreach (int el in array)
+    {
+        Console.Write($"{el} ");
+    }
+}
+
 void PrintArr2(int[] array) // вывод массива
 {
 
@@ -105,6 +115,6 @@ PrintArr(array);
 Console.WriteLine();
 SelectionSort(array, len);
 PrintArr2(array2);
-PrintArr(array);
+PrintArr3(array);
 Console.WriteLine();
 Console.WriteLine($"Медианное значение: {MedianNum(array, len)}");
