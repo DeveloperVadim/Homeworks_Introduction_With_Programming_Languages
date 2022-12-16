@@ -1,96 +1,28 @@
-﻿
-// int[] RandArr(int len) // создание рандомного массива
-// {
-//     int[] array = new int[len];
-//     Random rand = new Random();
-//     for (int i = 0; i < len; i++)
-//         array[i] = rand.Next() % (len * 10);
-//     return array;
-// }
+﻿// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 
+// задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-void PrintArr(int[] array) // вывод массива
-{
-    foreach (int el in array)
-    {
-        Console.Write($"{el} ");
-    }
-    Console.Write(":Исходный массив ");
-}
 
-void PrintArr2(int[] array) // вывод массива
-{
-    foreach (int el in array)
-    {
-        Console.Write($"{el} ");
-    }
-    Console.Write(":Отсортированный массив от Max к Min ");
-}
+// Задача 40 - HARD необязательная. На вход программы подаются три целых положительных 
+// числа. Определить , является ли это сторонами треугольника. Если да, то вывести всю 
+// информацию по нему - площадь, периметр, значения углов треугольника в градусах, 
+// является ли он прямоугольным, равнобедренным, равносторонним.
 
-void PrintArr3(int[] array) // вывод массива
-{
-    foreach (int el in array)
-    {
-        Console.Write($"{el} ");
-    }
-    Console.Write(":Перемешанный массив ");
-}
 
-int[] RandArr(int len)
-{
-int[] array = new int[len];
-Random rnd = new Random();
-int i = 0;
-while (i < len)
-{
-  int temp = rnd.Next(len);
-  if (array[temp] == 0)
-  {
-    array[temp] = i;
-    ++i;
-  }                
-}
-  return array;
-}
+// Задача 1 HARD необязательная. Сгенерировать массив случайных целых чисел 
+// размерностью m*n (размерность вводим с клавиатуры). Вывести на экран красивенько 
+// таблицей. Найти минимальное число и его индекс, найти максимальное число и его 
+// индекс. Вывести эту информацию на экран.
 
-void SelectionSort(int[] array, int len) // сортировка массива от max к min
-{
-    for (int i = 0; i < len - 1; i++)
-    {
-        int maxPos = i;
-        for (int j = i + 1; j < len; j++)
-        {
-            if (array[j] > array[maxPos])
-            {
-                maxPos = j;
-            }
-        }
-        int tmp = array[i];
-        array[i] = array[maxPos];
-        array[maxPos] = tmp;
-    }
-}
 
-void SelectionSort2(int[] array, int len) // сортировка случайным образом
-{
-    Random rand = new Random();
- 
-    for (int i = len - 1; i >= 1; i--)
-    {
-        int j = rand.Next(i + 1);
- 
-        int tmp = array[j];
-        array[j] = array[i];
-        array[i] = tmp;
-    }
-}
+// Задача 2 VERY HARD необязательная Имеется список чисел. Создайте список, в который 
+// попадают числа, описывающие максимальную возрастающую последовательность. Порядок 
+// элементов менять нельзя.
+// Одно число - это не последовательность.
+// Пример:
+// [1, 5, 2, 3, 4, 6, 1, 7] => [1, 7]
+// [1, 5, 2, 3, 4, 1, 7, 8 , 15 , 1 ] => [1, 5]
+// [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ] => [3, 5]
 
-Console.WriteLine("Задайте длину массива:");
-int len = Convert.ToInt32(Console.ReadLine());
-int[] array = RandArr(len);
-PrintArr(array);
-Console.WriteLine();
-SelectionSort(array, len);
-PrintArr2(array);
-Console.WriteLine();
-SelectionSort2(array, len);
-PrintArr3(array);
+
